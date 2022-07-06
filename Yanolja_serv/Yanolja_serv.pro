@@ -16,21 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    guide.cpp \
     main.cpp \
-    login.cpp \
-    signup.cpp \
-    tour_list.cpp
+    mainpage.cpp \
+    split.cpp \
+    user.cpp
 
 HEADERS += \
     database.h \
-    login.h \
-    signup.h \
-    tour_list.h
+    guide.h \
+    mainpage.h \
+    split.h \
+    user.h
 
 FORMS += \
-    login.ui \
-    signup.ui \
-    tour_list.ui
+    guide.ui \
+    mainpage.ui \
+    user.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

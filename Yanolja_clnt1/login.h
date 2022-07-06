@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include "signup.h"
+#include "tour_list.h"
 #include "database.h"
 #include <QMainWindow>
 

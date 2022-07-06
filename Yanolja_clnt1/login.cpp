@@ -8,6 +8,7 @@ login::login(QWidget *parent)
     , ui(new Ui::login)
 {
     ui->setupUi(this);
+    this->move(800, 400);
 }
 
 login::~login()

@@ -23,12 +23,18 @@ void tour_list::show_tour()
     rec = query.record();
     int name_col = rec.indexOf("name");
     int addr_col = rec.indexOf("address");
-    int parking_col = rec.indexOf("parking");
-    int credit_col = rec.indexOf("credit");
+    int parking_col = rec.indexOf("phone");
+    ui->list->setRowCount(query.size());
+    ui->list->setColumnCount(rec.count());
+    ui->list->setHorizontalHeaderItem(0, new QTableWidgetItem("시설명"));
+    ui->list->setHorizontalHeaderItem(1, new QTableWidgetItem("주소"));
+    ui->list->setHorizontalHeaderItem(2, new QTableWidgetItem("전화번호"));
+    int i=0;
     while(query.next())
     {
-        ui->list->addItem(query.value(name_col).toString() + "\t\t" + query.value(addr_col).toString()
-                          + "\t\t" + query.value(parking_col).toString() + "\t\t" + query.value(credit_col).toString());
+        ui->list->setItem(i,0,new QTableWidgetItem(query.value(name_col).toString()));
+        ui->list->setItem(i,1,new QTableWidgetItem(query.value(addr_col).toString()));
+        ui->list->setItem(i++,2,new QTableWidgetItem(query.value(parking_col).toString()));
     }
     ui->slt_btn->setText("해수욕장 정보");
     slt = true;
@@ -40,16 +46,25 @@ void tour_list::show_beach()
     query_string = "SELECT * FROM beachTBL";
     query.exec(QString::fromStdString(query_string));
     rec = query.record();
+    ui->list->setRowCount(query.size());
+    ui->list->setColumnCount(rec.count());
+    ui->list->setHorizontalHeaderItem(0, new QTableWidgetItem("이름"));
+    ui->list->setHorizontalHeaderItem(1, new QTableWidgetItem("화장실"));
+    ui->list->setHorizontalHeaderItem(2, new QTableWidgetItem("샤워장"));
+    ui->list->setHorizontalHeaderItem(3, new QTableWidgetItem("주차장"));
     int name_col = rec.indexOf("name");
     int toilet_col = rec.indexOf("toilet");
     int shower_col = rec.indexOf("shower");
     int parking_col = rec.indexOf("parking");
+    int i=0;
     while(query.next())
     {
-        ui->list->addItem(query.value(name_col).toString() + "\t\t" + query.value(toilet_col).toString()
-                          + "\t\t" + query.value(shower_col).toString() + "\t\t" + query.value(parking_col).toString());
+        ui->list->setItem(i,0,new QTableWidgetItem(query.value(name_col).toString()));
+        ui->list->setItem(i,1,new QTableWidgetItem(query.value(toilet_col).toString()));
+        ui->list->setItem(i,2,new QTableWidgetItem(query.value(shower_col).toString()));
+        ui->list->setItem(i++,3,new QTableWidgetItem(query.value(parking_col).toString()));
     }
-    ui->slt_btn->setText("숙박/식당 정보");
+    ui->slt_btn->setText("숙박 정보");
     slt = false;
 }
 

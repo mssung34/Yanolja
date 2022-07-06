@@ -29,7 +29,7 @@ public:
     {
         if (user->objectName().isEmpty())
             user->setObjectName(QString::fromUtf8("user"));
-        user->resize(595, 416);
+        user->resize(600, 400);
         list = new QListWidget(user);
         list->setObjectName(QString::fromUtf8("list"));
         list->setGeometry(QRect(10, 10, 571, 341));

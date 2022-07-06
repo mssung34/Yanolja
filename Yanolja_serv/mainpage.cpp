@@ -6,6 +6,7 @@ mainpage::mainpage(QWidget *parent)
     , ui(new Ui::mainpage)
 {
     ui->setupUi(this);
+    this->move(800, 400);
 }
 
 mainpage::~mainpage()
@@ -34,7 +35,11 @@ void mainpage::on_tour_btn_clicked()
 
 void mainpage::on_guide_btn_clicked()
 {
-
+    this->hide();
+    guide guide;
+    guide.setModal(true);
+    guide.exec();
+    this->show();
 }
 
 void mainpage::on_exit_btn_clicked()

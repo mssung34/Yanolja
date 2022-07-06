@@ -2,7 +2,7 @@
 #define MAINPAGE_H
 
 #include "user.h"
-
+#include "guide.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE

@@ -67,7 +67,6 @@ void user::on_del_btn_clicked()
 {
     QListWidgetItem *item = ui->list->currentItem();
     vector<string> user_data = split(item->text().toStdString(), '\t');
-    qDebug()<<QString::fromStdString(user_data[4]);
 
     query.prepare("INSERT INTO outTBL (ID, PW, name, phone, vip) "
                       "VALUES (?, ?, ?, ?, ?)");

@@ -16,17 +16,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    guide.cpp \
     main.cpp \
     mainpage.cpp \
+    split.cpp \
     user.cpp
 
 HEADERS += \
     database.h \
+    guide.h \
     mainpage.h \
     split.h \
     user.h
 
 FORMS += \
+    guide.ui \
     mainpage.ui \
     user.ui
 

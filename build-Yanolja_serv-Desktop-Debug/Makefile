@@ -52,13 +52,19 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Yanolja_serv/main.cpp \
+SOURCES       = ../Yanolja_serv/guide.cpp \
+		../Yanolja_serv/main.cpp \
 		../Yanolja_serv/mainpage.cpp \
-		../Yanolja_serv/user.cpp moc_mainpage.cpp \
+		../Yanolja_serv/split.cpp \
+		../Yanolja_serv/user.cpp moc_guide.cpp \
+		moc_mainpage.cpp \
 		moc_user.cpp
-OBJECTS       = main.o \
+OBJECTS       = guide.o \
+		main.o \
 		mainpage.o \
+		split.o \
 		user.o \
+		moc_guide.o \
 		moc_mainpage.o \
 		moc_user.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -138,10 +144,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Yanolja_serv/Yanolja_serv.pro ../Yanolja_serv/database.h \
+		../Yanolja_serv/guide.h \
 		../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/split.h \
-		../Yanolja_serv/user.h ../Yanolja_serv/main.cpp \
+		../Yanolja_serv/user.h ../Yanolja_serv/guide.cpp \
+		../Yanolja_serv/main.cpp \
 		../Yanolja_serv/mainpage.cpp \
+		../Yanolja_serv/split.cpp \
 		../Yanolja_serv/user.cpp
 QMAKE_TARGET  = Yanolja_serv
 DESTDIR       = 
@@ -151,7 +160,7 @@ TARGET        = Yanolja_serv
 first: all
 ####### Build rules
 
-Yanolja_serv: ui_mainpage.h ui_user.h $(OBJECTS)  
+Yanolja_serv: ui_guide.h ui_mainpage.h ui_user.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Yanolja_serv/Yanolja_serv.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -324,9 +333,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Yanolja_serv/database.h ../Yanolja_serv/mainpage.h ../Yanolja_serv/split.h ../Yanolja_serv/user.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Yanolja_serv/main.cpp ../Yanolja_serv/mainpage.cpp ../Yanolja_serv/user.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Yanolja_serv/mainpage.ui ../Yanolja_serv/user.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Yanolja_serv/database.h ../Yanolja_serv/guide.h ../Yanolja_serv/mainpage.h ../Yanolja_serv/split.h ../Yanolja_serv/user.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Yanolja_serv/guide.cpp ../Yanolja_serv/main.cpp ../Yanolja_serv/mainpage.cpp ../Yanolja_serv/split.cpp ../Yanolja_serv/user.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Yanolja_serv/guide.ui ../Yanolja_serv/mainpage.ui ../Yanolja_serv/user.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -358,19 +367,24 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainpage.cpp moc_user.cpp
+compiler_moc_header_make_all: moc_guide.cpp moc_mainpage.cpp moc_user.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainpage.cpp moc_user.cpp
+	-$(DEL_FILE) moc_guide.cpp moc_mainpage.cpp moc_user.cpp
+moc_guide.cpp: ../Yanolja_serv/guide.h \
+		../Yanolja_serv/database.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Yanolja/build-Yanolja_serv-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Yanolja/Yanolja_serv -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Yanolja_serv/guide.h -o moc_guide.cpp
+
 moc_mainpage.cpp: ../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/user.h \
-		../Yanolja_serv/split.h \
 		../Yanolja_serv/database.h \
+		../Yanolja_serv/guide.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Yanolja/build-Yanolja_serv-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Yanolja/Yanolja_serv -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Yanolja_serv/mainpage.h -o moc_mainpage.cpp
 
 moc_user.cpp: ../Yanolja_serv/user.h \
-		../Yanolja_serv/split.h \
 		../Yanolja_serv/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -380,9 +394,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainpage.h ui_user.h
+compiler_uic_make_all: ui_guide.h ui_mainpage.h ui_user.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainpage.h ui_user.h
+	-$(DEL_FILE) ui_guide.h ui_mainpage.h ui_user.h
+ui_guide.h: ../Yanolja_serv/guide.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../Yanolja_serv/guide.ui -o ui_guide.h
+
 ui_mainpage.h: ../Yanolja_serv/mainpage.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Yanolja_serv/mainpage.ui -o ui_mainpage.h
@@ -401,24 +419,36 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+guide.o: ../Yanolja_serv/guide.cpp ../Yanolja_serv/guide.h \
+		../Yanolja_serv/database.h \
+		ui_guide.h \
+		../Yanolja_serv/split.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o guide.o ../Yanolja_serv/guide.cpp
+
 main.o: ../Yanolja_serv/main.cpp ../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/user.h \
-		../Yanolja_serv/split.h \
-		../Yanolja_serv/database.h
+		../Yanolja_serv/database.h \
+		../Yanolja_serv/guide.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Yanolja_serv/main.cpp
 
 mainpage.o: ../Yanolja_serv/mainpage.cpp ../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/user.h \
-		../Yanolja_serv/split.h \
 		../Yanolja_serv/database.h \
+		../Yanolja_serv/guide.h \
 		ui_mainpage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainpage.o ../Yanolja_serv/mainpage.cpp
 
+split.o: ../Yanolja_serv/split.cpp ../Yanolja_serv/split.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o split.o ../Yanolja_serv/split.cpp
+
 user.o: ../Yanolja_serv/user.cpp ../Yanolja_serv/user.h \
-		../Yanolja_serv/split.h \
 		../Yanolja_serv/database.h \
-		ui_user.h
+		ui_user.h \
+		../Yanolja_serv/split.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o ../Yanolja_serv/user.cpp
+
+moc_guide.o: moc_guide.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_guide.o moc_guide.cpp
 
 moc_mainpage.o: moc_mainpage.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainpage.o moc_mainpage.cpp

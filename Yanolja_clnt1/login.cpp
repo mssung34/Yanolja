@@ -34,6 +34,11 @@ void login::on_login_btn_clicked()
         else
         {
             QMessageBox::information(this, "환 영", "로그인 성공");
+            this->hide();
+            tour_list tour;
+            tour.setModal(true);
+            tour.exec();
+            this->show();
         }
     }
 }

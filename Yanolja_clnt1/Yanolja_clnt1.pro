@@ -18,16 +18,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     login.cpp \
-    signup.cpp
+    signup.cpp \
+    tour_list.cpp
 
 HEADERS += \
     database.h \
     login.h \
-    signup.h
+    signup.h \
+    tour_list.h
 
 FORMS += \
     login.ui \
-    signup.ui
+    signup.ui \
+    tour_list.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

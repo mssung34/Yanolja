@@ -12,11 +12,15 @@ private:
     QSqlDatabase db;
 public:
     Database() {
+        open_db();
+    }
+    void open_db()
+    {
         db = QSqlDatabase::addDatabase("QMYSQL");
-        db.setHostName("127.0.0.1");      // IP 또는 DNS Host name
+        db.setHostName("10.10.20.34");      // IP 또는 DNS Host name
         db.setDatabaseName("Yanolja"); // DB명
-        db.setUserName("root");     // 계정 명
-        db.setPassword("1234");     // 계정 Password
+        db.setUserName("yanolja");     // 계정 명
+        db.setPassword("1q2w3e4r");     // 계정 Password
 
         if(!db.open())
         {
@@ -24,8 +28,12 @@ public:
             exit(1);
         }
     }
-    ~Database() {
+    void close_db()
+    {
         db.close();
+    }
+    ~Database() {
+        close_db();
     }
 };
 

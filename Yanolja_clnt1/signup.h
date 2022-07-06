@@ -1,8 +1,8 @@
 #ifndef SIGNUP_H
 #define SIGNUP_H
 
+#include "database.h"
 #include <QDialog>
-#include <database.h>
 #include <cstring>
 
 namespace Ui {
@@ -27,7 +27,6 @@ private slots:
 private:
     Ui::signup *ui;
 
-    Database database;
     QSqlQuery query;
     std::string query_string;
 

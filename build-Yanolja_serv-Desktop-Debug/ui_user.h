@@ -24,6 +24,7 @@ public:
     QPushButton *vip_btn;
     QPushButton *exit_btn;
     QPushButton *del_btn;
+    QPushButton *listslt_btn;
 
     void setupUi(QDialog *user)
     {
@@ -35,13 +36,16 @@ public:
         list->setGeometry(QRect(10, 10, 571, 341));
         vip_btn = new QPushButton(user);
         vip_btn->setObjectName(QString::fromUtf8("vip_btn"));
-        vip_btn->setGeometry(QRect(380, 360, 89, 25));
+        vip_btn->setGeometry(QRect(390, 360, 89, 25));
         exit_btn = new QPushButton(user);
         exit_btn->setObjectName(QString::fromUtf8("exit_btn"));
         exit_btn->setGeometry(QRect(490, 360, 89, 25));
         del_btn = new QPushButton(user);
         del_btn->setObjectName(QString::fromUtf8("del_btn"));
         del_btn->setGeometry(QRect(10, 360, 89, 25));
+        listslt_btn = new QPushButton(user);
+        listslt_btn->setObjectName(QString::fromUtf8("listslt_btn"));
+        listslt_btn->setGeometry(QRect(110, 360, 89, 25));
 
         retranslateUi(user);
 
@@ -54,6 +58,7 @@ public:
         vip_btn->setText(QApplication::translate("user", "VIP \353\266\200\354\227\254/\355\225\264\354\240\234", nullptr));
         exit_btn->setText(QApplication::translate("user", " \353\222\244\353\241\234\352\260\200\352\270\260", nullptr));
         del_btn->setText(QApplication::translate("user", "\355\232\214\354\233\220\354\240\225\353\263\264\354\202\255\354\240\234", nullptr));
+        listslt_btn->setText(QString());
     } // retranslateUi
 
 };

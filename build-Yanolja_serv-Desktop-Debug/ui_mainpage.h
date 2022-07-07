@@ -73,7 +73,7 @@ public:
         user_btn->setText(QApplication::translate("mainpage", "\355\232\214\354\233\220\352\264\200\353\246\254", nullptr));
         guide_btn->setText(QApplication::translate("mainpage", "\352\260\200\354\235\264\353\223\234\352\264\200\353\246\254", nullptr));
         beach_btn->setText(QApplication::translate("mainpage", "\352\264\200\352\264\221\354\247\200\352\264\200\353\246\254", nullptr));
-        tour_btn->setText(QApplication::translate("mainpage", "\354\210\231\353\260\225/\354\213\235\353\213\271\352\264\200\353\246\254", nullptr));
+        tour_btn->setText(QApplication::translate("mainpage", "\354\210\231\353\260\225\354\227\205\354\262\264 \352\264\200\353\246\254", nullptr));
         exit_btn->setText(QApplication::translate("mainpage", "\354\242\205\353\243\214", nullptr));
     } // retranslateUi
 

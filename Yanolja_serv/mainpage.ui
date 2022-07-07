@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>숙박/식당관리</string>
+     <string>숙박업체 관리</string>
     </property>
    </widget>
    <widget class="QPushButton" name="exit_btn">

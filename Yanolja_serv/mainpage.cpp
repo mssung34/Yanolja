@@ -25,12 +25,20 @@ void mainpage::on_user_btn_clicked()
 
 void mainpage::on_beach_btn_clicked()
 {
-
+    this->hide();
+    beach beach;
+    beach.setModal(true);
+    beach.exec();
+    this->show();
 }
 
 void mainpage::on_tour_btn_clicked()
 {
-
+    this->hide();
+    tour tour;
+    tour.setModal(true);
+    tour.exec();
+    this->show();
 }
 
 void mainpage::on_guide_btn_clicked()

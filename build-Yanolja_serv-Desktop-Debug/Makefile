@@ -52,20 +52,32 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Yanolja_serv/guide.cpp \
+SOURCES       = ../Yanolja_serv/beach.cpp \
+		../Yanolja_serv/edit.cpp \
+		../Yanolja_serv/guide.cpp \
 		../Yanolja_serv/main.cpp \
 		../Yanolja_serv/mainpage.cpp \
 		../Yanolja_serv/split.cpp \
-		../Yanolja_serv/user.cpp moc_guide.cpp \
+		../Yanolja_serv/tour.cpp \
+		../Yanolja_serv/user.cpp moc_beach.cpp \
+		moc_edit.cpp \
+		moc_guide.cpp \
 		moc_mainpage.cpp \
+		moc_tour.cpp \
 		moc_user.cpp
-OBJECTS       = guide.o \
+OBJECTS       = beach.o \
+		edit.o \
+		guide.o \
 		main.o \
 		mainpage.o \
 		split.o \
+		tour.o \
 		user.o \
+		moc_beach.o \
+		moc_edit.o \
 		moc_guide.o \
 		moc_mainpage.o \
+		moc_tour.o \
 		moc_user.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -143,14 +155,20 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../Yanolja_serv/Yanolja_serv.pro ../Yanolja_serv/database.h \
+		../Yanolja_serv/Yanolja_serv.pro ../Yanolja_serv/beach.h \
+		../Yanolja_serv/database.h \
+		../Yanolja_serv/edit.h \
 		../Yanolja_serv/guide.h \
 		../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/split.h \
-		../Yanolja_serv/user.h ../Yanolja_serv/guide.cpp \
+		../Yanolja_serv/tour.h \
+		../Yanolja_serv/user.h ../Yanolja_serv/beach.cpp \
+		../Yanolja_serv/edit.cpp \
+		../Yanolja_serv/guide.cpp \
 		../Yanolja_serv/main.cpp \
 		../Yanolja_serv/mainpage.cpp \
 		../Yanolja_serv/split.cpp \
+		../Yanolja_serv/tour.cpp \
 		../Yanolja_serv/user.cpp
 QMAKE_TARGET  = Yanolja_serv
 DESTDIR       = 
@@ -160,7 +178,7 @@ TARGET        = Yanolja_serv
 first: all
 ####### Build rules
 
-Yanolja_serv: ui_guide.h ui_mainpage.h ui_user.h $(OBJECTS)  
+Yanolja_serv: ui_beach.h ui_edit.h ui_guide.h ui_mainpage.h ui_tour.h ui_user.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Yanolja_serv/Yanolja_serv.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -333,9 +351,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Yanolja_serv/database.h ../Yanolja_serv/guide.h ../Yanolja_serv/mainpage.h ../Yanolja_serv/split.h ../Yanolja_serv/user.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Yanolja_serv/guide.cpp ../Yanolja_serv/main.cpp ../Yanolja_serv/mainpage.cpp ../Yanolja_serv/split.cpp ../Yanolja_serv/user.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Yanolja_serv/guide.ui ../Yanolja_serv/mainpage.ui ../Yanolja_serv/user.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Yanolja_serv/beach.h ../Yanolja_serv/database.h ../Yanolja_serv/edit.h ../Yanolja_serv/guide.h ../Yanolja_serv/mainpage.h ../Yanolja_serv/split.h ../Yanolja_serv/tour.h ../Yanolja_serv/user.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Yanolja_serv/beach.cpp ../Yanolja_serv/edit.cpp ../Yanolja_serv/guide.cpp ../Yanolja_serv/main.cpp ../Yanolja_serv/mainpage.cpp ../Yanolja_serv/split.cpp ../Yanolja_serv/tour.cpp ../Yanolja_serv/user.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Yanolja_serv/beach.ui ../Yanolja_serv/edit.ui ../Yanolja_serv/guide.ui ../Yanolja_serv/mainpage.ui ../Yanolja_serv/tour.ui ../Yanolja_serv/user.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -367,9 +385,22 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_guide.cpp moc_mainpage.cpp moc_user.cpp
+compiler_moc_header_make_all: moc_beach.cpp moc_edit.cpp moc_guide.cpp moc_mainpage.cpp moc_tour.cpp moc_user.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_guide.cpp moc_mainpage.cpp moc_user.cpp
+	-$(DEL_FILE) moc_beach.cpp moc_edit.cpp moc_guide.cpp moc_mainpage.cpp moc_tour.cpp moc_user.cpp
+moc_beach.cpp: ../Yanolja_serv/beach.h \
+		../Yanolja_serv/database.h \
+		../Yanolja_serv/edit.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Yanolja/build-Yanolja_serv-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Yanolja/Yanolja_serv -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Yanolja_serv/beach.h -o moc_beach.cpp
+
+moc_edit.cpp: ../Yanolja_serv/edit.h \
+		../Yanolja_serv/database.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Yanolja/build-Yanolja_serv-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Yanolja/Yanolja_serv -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Yanolja_serv/edit.h -o moc_edit.cpp
+
 moc_guide.cpp: ../Yanolja_serv/guide.h \
 		../Yanolja_serv/database.h \
 		moc_predefs.h \
@@ -380,9 +411,18 @@ moc_mainpage.cpp: ../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/user.h \
 		../Yanolja_serv/database.h \
 		../Yanolja_serv/guide.h \
+		../Yanolja_serv/tour.h \
+		../Yanolja_serv/edit.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Yanolja/build-Yanolja_serv-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Yanolja/Yanolja_serv -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Yanolja_serv/mainpage.h -o moc_mainpage.cpp
+
+moc_tour.cpp: ../Yanolja_serv/tour.h \
+		../Yanolja_serv/database.h \
+		../Yanolja_serv/edit.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Yanolja/build-Yanolja_serv-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Yanolja/Yanolja_serv -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Yanolja_serv/tour.h -o moc_tour.cpp
 
 moc_user.cpp: ../Yanolja_serv/user.h \
 		../Yanolja_serv/database.h \
@@ -394,9 +434,17 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_guide.h ui_mainpage.h ui_user.h
+compiler_uic_make_all: ui_beach.h ui_edit.h ui_guide.h ui_mainpage.h ui_tour.h ui_user.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_guide.h ui_mainpage.h ui_user.h
+	-$(DEL_FILE) ui_beach.h ui_edit.h ui_guide.h ui_mainpage.h ui_tour.h ui_user.h
+ui_beach.h: ../Yanolja_serv/beach.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../Yanolja_serv/beach.ui -o ui_beach.h
+
+ui_edit.h: ../Yanolja_serv/edit.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../Yanolja_serv/edit.ui -o ui_edit.h
+
 ui_guide.h: ../Yanolja_serv/guide.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Yanolja_serv/guide.ui -o ui_guide.h
@@ -404,6 +452,10 @@ ui_guide.h: ../Yanolja_serv/guide.ui \
 ui_mainpage.h: ../Yanolja_serv/mainpage.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Yanolja_serv/mainpage.ui -o ui_mainpage.h
+
+ui_tour.h: ../Yanolja_serv/tour.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../Yanolja_serv/tour.ui -o ui_tour.h
 
 ui_user.h: ../Yanolja_serv/user.ui \
 		/usr/lib/qt5/bin/uic
@@ -419,6 +471,17 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
+beach.o: ../Yanolja_serv/beach.cpp ../Yanolja_serv/beach.h \
+		../Yanolja_serv/database.h \
+		../Yanolja_serv/edit.h \
+		ui_beach.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o beach.o ../Yanolja_serv/beach.cpp
+
+edit.o: ../Yanolja_serv/edit.cpp ../Yanolja_serv/edit.h \
+		../Yanolja_serv/database.h \
+		ui_edit.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o edit.o ../Yanolja_serv/edit.cpp
+
 guide.o: ../Yanolja_serv/guide.cpp ../Yanolja_serv/guide.h \
 		../Yanolja_serv/database.h \
 		ui_guide.h \
@@ -428,18 +491,29 @@ guide.o: ../Yanolja_serv/guide.cpp ../Yanolja_serv/guide.h \
 main.o: ../Yanolja_serv/main.cpp ../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/user.h \
 		../Yanolja_serv/database.h \
-		../Yanolja_serv/guide.h
+		../Yanolja_serv/guide.h \
+		../Yanolja_serv/tour.h \
+		../Yanolja_serv/edit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Yanolja_serv/main.cpp
 
 mainpage.o: ../Yanolja_serv/mainpage.cpp ../Yanolja_serv/mainpage.h \
 		../Yanolja_serv/user.h \
 		../Yanolja_serv/database.h \
 		../Yanolja_serv/guide.h \
+		../Yanolja_serv/tour.h \
+		../Yanolja_serv/edit.h \
 		ui_mainpage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainpage.o ../Yanolja_serv/mainpage.cpp
 
 split.o: ../Yanolja_serv/split.cpp ../Yanolja_serv/split.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o split.o ../Yanolja_serv/split.cpp
+
+tour.o: ../Yanolja_serv/tour.cpp ../Yanolja_serv/tour.h \
+		../Yanolja_serv/database.h \
+		../Yanolja_serv/edit.h \
+		ui_tour.h \
+		../Yanolja_serv/split.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tour.o ../Yanolja_serv/tour.cpp
 
 user.o: ../Yanolja_serv/user.cpp ../Yanolja_serv/user.h \
 		../Yanolja_serv/database.h \
@@ -447,11 +521,20 @@ user.o: ../Yanolja_serv/user.cpp ../Yanolja_serv/user.h \
 		../Yanolja_serv/split.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user.o ../Yanolja_serv/user.cpp
 
+moc_beach.o: moc_beach.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_beach.o moc_beach.cpp
+
+moc_edit.o: moc_edit.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_edit.o moc_edit.cpp
+
 moc_guide.o: moc_guide.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_guide.o moc_guide.cpp
 
 moc_mainpage.o: moc_mainpage.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainpage.o moc_mainpage.cpp
+
+moc_tour.o: moc_tour.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_tour.o moc_tour.cpp
 
 moc_user.o: moc_user.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_user.o moc_user.cpp

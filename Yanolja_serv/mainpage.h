@@ -3,6 +3,8 @@
 
 #include "user.h"
 #include "guide.h"
+#include "tour.h"
+#include "beach.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE

@@ -79,6 +79,19 @@
      <string>종료</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="reservation_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>예약 관리</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

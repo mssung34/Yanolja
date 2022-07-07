@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>371</width>
-     <height>371</height>
+     <width>420</width>
+     <height>370</height>
     </rect>
    </property>
   </widget>
@@ -79,17 +79,17 @@
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>80</y>
+     <y>30</y>
      <width>113</width>
      <height>25</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="local_text">
+  <widget class="QLineEdit" name="phone_text">
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>130</y>
+     <y>80</y>
      <width>113</width>
      <height>25</height>
     </rect>
@@ -99,7 +99,7 @@
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>50</y>
+     <y>10</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -112,13 +112,59 @@
    <property name="geometry">
     <rect>
      <x>440</x>
+     <y>60</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>전화번호</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="can_label">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
      <y>110</y>
      <width>67</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>담당구역</string>
+    <string>가능여부</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="local_label_2">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>160</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>예약고객</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="user_id_text">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>180</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="pos_text">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>130</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
    </property>
   </widget>
  </widget>

@@ -28,6 +28,7 @@ public:
     QPushButton *beach_btn;
     QPushButton *tour_btn;
     QPushButton *exit_btn;
+    QPushButton *reservation_btn;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,6 +54,9 @@ public:
         exit_btn = new QPushButton(centralwidget);
         exit_btn->setObjectName(QString::fromUtf8("exit_btn"));
         exit_btn->setGeometry(QRect(130, 120, 89, 25));
+        reservation_btn = new QPushButton(centralwidget);
+        reservation_btn->setObjectName(QString::fromUtf8("reservation_btn"));
+        reservation_btn->setGeometry(QRect(10, 90, 89, 25));
         mainpage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(mainpage);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -75,6 +79,7 @@ public:
         beach_btn->setText(QApplication::translate("mainpage", "\352\264\200\352\264\221\354\247\200\352\264\200\353\246\254", nullptr));
         tour_btn->setText(QApplication::translate("mainpage", "\354\210\231\353\260\225\354\227\205\354\262\264 \352\264\200\353\246\254", nullptr));
         exit_btn->setText(QApplication::translate("mainpage", "\354\242\205\353\243\214", nullptr));
+        reservation_btn->setText(QApplication::translate("mainpage", "\354\230\210\354\225\275 \352\264\200\353\246\254", nullptr));
     } // retranslateUi
 
 };

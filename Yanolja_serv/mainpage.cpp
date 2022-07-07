@@ -41,6 +41,15 @@ void mainpage::on_tour_btn_clicked()
     this->show();
 }
 
+void mainpage::on_reservation_btn_clicked()
+{
+    this->hide();
+    reservation reservation;
+    reservation.setModal(true);
+    reservation.exec();
+    this->show();
+}
+
 void mainpage::on_guide_btn_clicked()
 {
     this->hide();
@@ -54,3 +63,4 @@ void mainpage::on_exit_btn_clicked()
 {
     this->close();
 }
+

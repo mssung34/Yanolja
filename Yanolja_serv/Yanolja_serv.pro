@@ -21,6 +21,7 @@ SOURCES += \
     guide.cpp \
     main.cpp \
     mainpage.cpp \
+    reservation.cpp \
     split.cpp \
     tour.cpp \
     user.cpp
@@ -31,6 +32,7 @@ HEADERS += \
     edit.h \
     guide.h \
     mainpage.h \
+    reservation.h \
     split.h \
     tour.h \
     user.h
@@ -40,6 +42,7 @@ FORMS += \
     edit.ui \
     guide.ui \
     mainpage.ui \
+    reservation.ui \
     tour.ui \
     user.ui
 

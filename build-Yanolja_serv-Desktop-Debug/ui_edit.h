@@ -31,12 +31,14 @@ public:
     QLabel *label3;
     QLabel *label4;
     QLineEdit *text4;
+    QLineEdit *text5;
+    QLabel *label5;
 
     void setupUi(QDialog *edit)
     {
         if (edit->objectName().isEmpty())
             edit->setObjectName(QString::fromUtf8("edit"));
-        edit->resize(250, 272);
+        edit->resize(350, 272);
         text1 = new QLineEdit(edit);
         text1->setObjectName(QString::fromUtf8("text1"));
         text1->setGeometry(QRect(10, 30, 211, 25));
@@ -48,10 +50,10 @@ public:
         text3->setGeometry(QRect(10, 130, 211, 25));
         ok_btn = new QPushButton(edit);
         ok_btn->setObjectName(QString::fromUtf8("ok_btn"));
-        ok_btn->setGeometry(QRect(20, 230, 89, 25));
+        ok_btn->setGeometry(QRect(240, 50, 89, 25));
         exit_btn = new QPushButton(edit);
         exit_btn->setObjectName(QString::fromUtf8("exit_btn"));
-        exit_btn->setGeometry(QRect(130, 230, 89, 25));
+        exit_btn->setGeometry(QRect(240, 100, 89, 25));
         label1 = new QLabel(edit);
         label1->setObjectName(QString::fromUtf8("label1"));
         label1->setGeometry(QRect(10, 10, 67, 17));
@@ -67,6 +69,12 @@ public:
         text4 = new QLineEdit(edit);
         text4->setObjectName(QString::fromUtf8("text4"));
         text4->setGeometry(QRect(10, 180, 211, 25));
+        text5 = new QLineEdit(edit);
+        text5->setObjectName(QString::fromUtf8("text5"));
+        text5->setGeometry(QRect(10, 230, 211, 25));
+        label5 = new QLabel(edit);
+        label5->setObjectName(QString::fromUtf8("label5"));
+        label5->setGeometry(QRect(10, 210, 67, 17));
 
         retranslateUi(edit);
 
@@ -82,6 +90,7 @@ public:
         label2->setText(QString());
         label3->setText(QString());
         label4->setText(QString());
+        label5->setText(QString());
     } // retranslateUi
 
 };

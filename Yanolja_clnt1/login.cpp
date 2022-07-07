@@ -36,7 +36,7 @@ void login::on_login_btn_clicked()
         {
             QMessageBox::information(this, "환 영", "로그인 성공");
             this->hide();
-            tour_list tour;
+            tour_list tour(ui->id_text->text().toStdString());
             tour.setModal(true);
             tour.exec();
             this->show();

@@ -1,12 +1,14 @@
 #include "tour_list.h"
 #include "ui_tour_list.h"
+#include <vector>
 
-tour_list::tour_list(QWidget *parent) :
+tour_list::tour_list(std::string id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::tour_list)
 {
     ui->setupUi(this);
     show_beach();
+    this->id = id;
 }
 
 
@@ -79,4 +81,19 @@ void tour_list::on_slt_btn_clicked()
 void tour_list::on_exit_btn_clicked()
 {
     this->close();
+}
+
+void tour_list::on_user_btn_clicked()
+{
+    query_string = "SELECT * FROM userTBL WHERE ID='" + id + "'";
+    query.exec(QString::fromStdString(query_string));
+    query.next();
+    std::vector<std::string> data;
+    for(int i = 0; i < 4; i++)
+    {
+        data.push_back(query.value(i).toString().toStdString());
+    }
+    user_edit user(data);
+    user.setModal(true);
+    user.exec();
 }

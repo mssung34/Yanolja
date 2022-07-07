@@ -2,6 +2,7 @@
 #define TOUR_LIST_H
 
 #include "database.h"
+#include "user_edit.h"
 #include <QDialog>
 
 namespace Ui {
@@ -13,7 +14,7 @@ class tour_list : public QDialog
     Q_OBJECT
 
 public:
-    explicit tour_list(QWidget *parent = nullptr);
+    explicit tour_list(std::string id, QWidget *parent = nullptr);
     void show_tour();
     void show_beach();
     ~tour_list();
@@ -23,12 +24,15 @@ private slots:
 
     void on_exit_btn_clicked();
 
+    void on_user_btn_clicked();
+
 private:
     Ui::tour_list *ui;
 
     QSqlQuery query;
     QSqlRecord rec;
     std::string query_string;
+    std::string id;
 
     bool slt = false; //tour : 0 / beach : 1
 };

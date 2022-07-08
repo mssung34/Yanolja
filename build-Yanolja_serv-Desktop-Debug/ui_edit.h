@@ -39,6 +39,7 @@ public:
         if (edit->objectName().isEmpty())
             edit->setObjectName(QString::fromUtf8("edit"));
         edit->resize(350, 272);
+        edit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         text1 = new QLineEdit(edit);
         text1->setObjectName(QString::fromUtf8("text1"));
         text1->setGeometry(QRect(10, 30, 211, 25));
@@ -50,10 +51,36 @@ public:
         text3->setGeometry(QRect(10, 130, 211, 25));
         ok_btn = new QPushButton(edit);
         ok_btn->setObjectName(QString::fromUtf8("ok_btn"));
-        ok_btn->setGeometry(QRect(240, 50, 89, 25));
+        ok_btn->setGeometry(QRect(240, 30, 89, 30));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Sans"));
+        font.setBold(true);
+        font.setWeight(75);
+        ok_btn->setFont(font);
+        ok_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: rgb(238, 238, 236);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 0, 0);\n"
+"    border-radius: 10px;\n"
+"}"));
         exit_btn = new QPushButton(edit);
         exit_btn->setObjectName(QString::fromUtf8("exit_btn"));
-        exit_btn->setGeometry(QRect(240, 100, 89, 25));
+        exit_btn->setGeometry(QRect(240, 80, 89, 30));
+        exit_btn->setFont(font);
+        exit_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: rgb(238, 238, 236);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 0, 0);\n"
+"    border-radius: 10px;\n"
+"}"));
         label1 = new QLabel(edit);
         label1->setObjectName(QString::fromUtf8("label1"));
         label1->setGeometry(QRect(10, 10, 67, 17));
@@ -83,9 +110,9 @@ public:
 
     void retranslateUi(QDialog *edit)
     {
-        edit->setWindowTitle(QApplication::translate("edit", "Dialog", nullptr));
+        edit->setWindowTitle(QApplication::translate("edit", "Edit", nullptr));
         ok_btn->setText(QApplication::translate("edit", "\355\231\225\354\235\270", nullptr));
-        exit_btn->setText(QApplication::translate("edit", "\353\217\214\354\225\204\352\260\200\352\270\260", nullptr));
+        exit_btn->setText(QApplication::translate("edit", "\354\267\250\354\206\214", nullptr));
         label1->setText(QString());
         label2->setText(QString());
         label3->setText(QString());

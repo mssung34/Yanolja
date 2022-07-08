@@ -6,29 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>244</width>
-    <height>217</height>
+    <width>275</width>
+    <height>335</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>회원가입</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QLineEdit" name="id_text">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>113</width>
+     <x>30</x>
+     <y>40</y>
+     <width>130</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
   </widget>
   <widget class="QLineEdit" name="pw_text">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>113</width>
+     <x>30</x>
+     <y>90</y>
+     <width>130</width>
      <height>25</height>
     </rect>
    </property>
@@ -39,9 +45,9 @@
   <widget class="QLineEdit" name="pw2_text">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>113</width>
+     <x>30</x>
+     <y>140</y>
+     <width>130</width>
      <height>25</height>
     </rect>
    </property>
@@ -52,9 +58,9 @@
   <widget class="QLineEdit" name="phone_text">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>113</width>
+     <x>30</x>
+     <y>240</y>
+     <width>130</width>
      <height>25</height>
     </rect>
    </property>
@@ -62,11 +68,30 @@
   <widget class="QPushButton" name="check_btn">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>10</y>
-     <width>89</width>
+     <x>170</x>
+     <y>40</y>
+     <width>81</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 56, 120);
+	color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 56, 120);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string>중복확인</string>
@@ -75,11 +100,30 @@
   <widget class="QPushButton" name="signup_btn">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>170</y>
+     <x>30</x>
+     <y>280</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 56, 120);
+	color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 56, 120);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string>확인</string>
@@ -88,24 +132,108 @@
   <widget class="QPushButton" name="exit_btn">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>170</y>
+     <x>150</x>
+     <y>280</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 56, 120);
+	color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 56, 120);
+    border-radius: 10px;
+}</string>
+   </property>
    <property name="text">
-    <string>종료</string>
+    <string>뒤로가기</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="name_text">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>113</width>
+     <x>30</x>
+     <y>190</y>
+     <width>130</width>
      <height>25</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ID</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PW</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PW Check</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>220</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Phone</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name</string>
    </property>
   </widget>
  </widget>

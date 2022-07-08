@@ -32,6 +32,7 @@ public:
         if (reservation->objectName().isEmpty())
             reservation->setObjectName(QString::fromUtf8("reservation"));
         reservation->resize(1000, 550);
+        reservation->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         list = new QTableWidget(reservation);
         if (list->columnCount() < 5)
             list->setColumnCount(5);
@@ -42,16 +43,64 @@ public:
         list->horizontalHeader()->setStretchLastSection(true);
         exit_btn = new QPushButton(reservation);
         exit_btn->setObjectName(QString::fromUtf8("exit_btn"));
-        exit_btn->setGeometry(QRect(890, 20, 89, 25));
+        exit_btn->setGeometry(QRect(890, 15, 89, 30));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Sans"));
+        font.setBold(true);
+        font.setWeight(75);
+        exit_btn->setFont(font);
+        exit_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: rgb(238, 238, 236);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 0, 0);\n"
+"    border-radius: 10px;\n"
+"}"));
         del_btn = new QPushButton(reservation);
         del_btn->setObjectName(QString::fromUtf8("del_btn"));
-        del_btn->setGeometry(QRect(780, 20, 89, 25));
+        del_btn->setGeometry(QRect(780, 15, 89, 30));
+        del_btn->setFont(font);
+        del_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: rgb(238, 238, 236);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 0, 0);\n"
+"    border-radius: 10px;\n"
+"}"));
         edit_btn = new QPushButton(reservation);
         edit_btn->setObjectName(QString::fromUtf8("edit_btn"));
-        edit_btn->setGeometry(QRect(670, 20, 89, 25));
+        edit_btn->setGeometry(QRect(670, 15, 89, 30));
+        edit_btn->setFont(font);
+        edit_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: rgb(238, 238, 236);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 0, 0);\n"
+"    border-radius: 10px;\n"
+"}"));
         add_btn = new QPushButton(reservation);
         add_btn->setObjectName(QString::fromUtf8("add_btn"));
-        add_btn->setGeometry(QRect(560, 20, 89, 25));
+        add_btn->setGeometry(QRect(560, 15, 89, 30));
+        add_btn->setFont(font);
+        add_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"	color: rgb(238, 238, 236);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 0, 0);\n"
+"    border-radius: 10px;\n"
+"}"));
 
         retranslateUi(reservation);
 

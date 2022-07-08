@@ -77,7 +77,7 @@ void reservation::on_edit_btn_clicked()
 void reservation::on_del_btn_clicked()
 {
     int row = ui->list->currentRow();
-    query_string = "DELETE FROM reservationTBL WHERE name='" + ui->list->takeItem(row, 0)->text().toStdString() + "'";
+    query_string = "DELETE FROM reservationTBL WHERE ID='" + ui->list->takeItem(row, 0)->text().toStdString() + "'";
     query.exec(QString::fromStdString(query_string));
     QMessageBox::information(this, "OK", "삭제 완료");
     show_list();

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QTableWidget" name="list">
    <property name="geometry">
     <rect>
@@ -41,10 +44,29 @@
    <property name="geometry">
     <rect>
      <x>890</x>
-     <y>20</y>
+     <y>15</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string>뒤로가기</string>
@@ -54,10 +76,29 @@
    <property name="geometry">
     <rect>
      <x>780</x>
-     <y>20</y>
+     <y>15</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string>삭제</string>
@@ -67,10 +108,29 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>20</y>
+     <y>15</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string>수정</string>
@@ -80,10 +140,29 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>20</y>
+     <y>15</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string>추가</string>

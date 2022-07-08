@@ -19,18 +19,21 @@ SOURCES += \
     main.cpp \
     login.cpp \
     signup.cpp \
-    tour_list.cpp
+    tour_list.cpp \
+    user_edit.cpp
 
 HEADERS += \
     database.h \
     login.h \
     signup.h \
-    tour_list.h
+    tour_list.h \
+    user_edit.h
 
 FORMS += \
     login.ui \
     signup.ui \
-    tour_list.ui
+    tour_list.ui \
+    user_edit.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

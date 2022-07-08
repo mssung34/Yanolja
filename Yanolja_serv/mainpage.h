@@ -3,6 +3,9 @@
 
 #include "user.h"
 #include "guide.h"
+#include "tour.h"
+#include "beach.h"
+#include "reservation.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +30,10 @@ private slots:
 
     void on_guide_btn_clicked();
 
+    void on_reservation_btn_clicked();
+
     void on_exit_btn_clicked();
+
 
 private:
     Ui::mainpage *ui;

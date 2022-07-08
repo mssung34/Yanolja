@@ -11,16 +11,38 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QPushButton" name="slt_btn">
    <property name="geometry">
     <rect>
      <x>780</x>
-     <y>20</y>
+     <y>15</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 56, 120);
+	color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 56, 120);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string/>
@@ -30,13 +52,32 @@
    <property name="geometry">
     <rect>
      <x>890</x>
-     <y>20</y>
+     <y>15</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 56, 120);
+	color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 56, 120);
+    border-radius: 10px;
+}</string>
+   </property>
    <property name="text">
-    <string>종료</string>
+    <string>로그아웃</string>
    </property>
   </widget>
   <widget class="QTableWidget" name="list">
@@ -63,6 +104,38 @@
    <attribute name="verticalHeaderVisible">
     <bool>false</bool>
    </attribute>
+  </widget>
+  <widget class="QPushButton" name="user_btn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>15</y>
+     <width>89</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 56, 120);
+	color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 56, 120);
+    border-radius: 10px;
+}</string>
+   </property>
+   <property name="text">
+    <string>내정보</string>
+   </property>
   </widget>
  </widget>
  <resources/>

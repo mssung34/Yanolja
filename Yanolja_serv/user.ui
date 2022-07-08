@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QListWidget" name="list">
    <property name="geometry">
     <rect>
@@ -26,14 +29,33 @@
   <widget class="QPushButton" name="vip_btn">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>390</x>
      <y>360</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
+   </property>
    <property name="text">
-    <string>VIP 부여/해제</string>
+    <string>VIP</string>
    </property>
   </widget>
   <widget class="QPushButton" name="exit_btn">
@@ -42,8 +64,27 @@
      <x>490</x>
      <y>360</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
    </property>
    <property name="text">
     <string> 뒤로가기</string>
@@ -55,11 +96,62 @@
      <x>10</x>
      <y>360</y>
      <width>89</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
+   </property>
    <property name="text">
-    <string>회원정보삭제</string>
+    <string>삭제</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="listslt_btn">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>360</y>
+     <width>89</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 0, 0);
+	color: rgb(238, 238, 236);
+    border-radius: 10px;
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+    border-radius: 10px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

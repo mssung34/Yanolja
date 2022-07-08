@@ -16,22 +16,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    beach.cpp \
+    edit.cpp \
     guide.cpp \
     main.cpp \
     mainpage.cpp \
+    reservation.cpp \
     split.cpp \
+    tour.cpp \
     user.cpp
 
 HEADERS += \
+    beach.h \
     database.h \
+    edit.h \
     guide.h \
     mainpage.h \
+    reservation.h \
     split.h \
+    tour.h \
     user.h
 
 FORMS += \
+    beach.ui \
+    edit.ui \
     guide.ui \
     mainpage.ui \
+    reservation.ui \
+    tour.ui \
     user.ui
 
 # Default rules for deployment.

@@ -16,6 +16,9 @@ user::user(QWidget *parent) :
 
 void user::show_userlist()
 {
+    ui->del_btn->setEnabled(true);
+    ui->vip_btn->setEnabled(true);
+    ui->listslt_btn->setText("탈퇴회원 조회");
     ui->list->clear();
     query_string = "SELECT * FROM userTBL";
     query.exec(QString::fromStdString(query_string));
@@ -31,6 +34,30 @@ void user::show_userlist()
                           + "\t" + query.value(name_col).toString() + "\t" + query.value(phone_col).toString()
                           + "\t" + query.value(vip_col).toString());
     }
+    list_slt = true;
+}
+
+void user::show_del_user_list()
+{
+    ui->del_btn->setEnabled(false);
+    ui->vip_btn->setEnabled(false);
+    ui->listslt_btn->setText("회원 조회");
+    ui->list->clear();
+    query_string = "SELECT * FROM outTBL";
+    query.exec(QString::fromStdString(query_string));
+    rec = query.record();
+    int id_col = rec.indexOf("ID");
+    int pw_col = rec.indexOf("PW");
+    int name_col = rec.indexOf("name");
+    int phone_col = rec.indexOf("phone");
+    int vip_col = rec.indexOf("vip");
+    while(query.next())
+    {
+        ui->list->addItem(query.value(id_col).toString() + "\t" + query.value(pw_col).toString()
+                          + "\t" + query.value(name_col).toString() + "\t" + query.value(phone_col).toString()
+                          + "\t" + query.value(vip_col).toString());
+    }
+    list_slt = false;
 }
 
 user::~user()
@@ -83,4 +110,9 @@ void user::on_del_btn_clicked()
     query.exec(QString::fromStdString(query_string));
     QMessageBox::information(this, "OK", "삭제 완료");
     show_userlist();
+}
+
+void user::on_listslt_btn_clicked()
+{
+    !list_slt ? show_userlist() : show_del_user_list();
 }

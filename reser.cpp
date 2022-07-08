@@ -248,10 +248,7 @@ void reser::on_delguide_clicked()
 
 void reser::on_delall_clicked()
 {
-    query_string="UPDATE reservationTBL SET date='" "' WHERE ID='"+Input_ID+"'";
-    query.exec(QString::fromStdString(query_string));
-
-    query_string="DELETE FROM reservatTBL WHERE ID='"+Input_ID+"'";
+    query_string="DELETE FROM reservationTBL WHERE ID='"+Input_ID+"'";
     query.exec(QString::fromStdString(query_string));
     query.first();
     QMessageBox::information(this,"succse","예약 취소가 완료되었습니다.");
